@@ -20,13 +20,18 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/favicon.ico"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/lib/toastr.css"
             ],
-            "scripts": []
+            "scripts": [  
+              "src/aes.js",
+              "src/pbkdf2.js",
+              "src/script.js"            
+            ]
           },
           "configurations": {
             "production": {

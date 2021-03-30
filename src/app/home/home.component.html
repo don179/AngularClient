@@ -1,0 +1,21 @@
+    <div class="container-fluid" id="loginDiv">
+        <div class="row" >      
+          <div class="col-sm-6">        
+            <app-login (messageEvent)="receiveMessage($event)"></app-login>
+          </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="logoutDiv">
+      <div class="row">
+        <div class="col-sm-6">
+          You are successfully logged in <button (click)="logout()" class="btn btn-danger">Logout</button>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid" >
+      <div class="row" id="layoutDiv">     
+        <div class="col-sm-6">            
+          <app-layout [childMessage]></app-layout>
+        </div>    
+      </div>                
+    <div>

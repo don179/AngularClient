@@ -1,0 +1,27 @@
+<div class="row">
+  <input type="text" placeholder="Filter by Event" [(ngModel)]="searchTexte">
+</div>
+<table class="table table-hover">
+  <tr>
+    <th>Event Name</th>
+    <th>Event Number</th>
+    <th>Event Date Time</th>
+    <th>Event End Date Time</th>
+    <th>AutoClose</th>
+    <th>Tournament ID</th>
+    <th>Delete</th>
+    <th>Reload</th>
+
+  </tr>
+    <tr *ngFor="let _event of service.list | filter:searchTexte | paginate: { itemsPerPage:3, currentPage: p1 }; let i = index">
+      <td (click)="populateForm(_event)">{{_event.EventName}}</td>
+      <td (click)="populateForm(_event)">{{_event.EventNumber}}</td>
+      <td (click)="populateForm(_event)">{{_event.EventDateTime}}</td>
+      <td (click)="populateForm(_event)">{{_event.EventEndDateTime}}</td>
+      <td (click)="populateForm(_event)">{{_event.AutoClose}}</td>
+      <td (click)="populateForm(_event)">{{_event.FK_TournamentID}}</td>
+      <td><button (click)="onDelete(_event.EventID)" class="btn btn-sm btn-outline-danger">X</button></td>
+      <td><button (click)="onRefresh(_event.EventID)" class="btn btn-primary">Reload</button> </td>
+  </tr>
+</table>
+<pagination-controls (pageChange)="p1 = $event"></pagination-controls>

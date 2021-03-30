@@ -1,0 +1,95 @@
+<div class="container-fluid" id="fullaccess" >
+   <div class="row" >      
+     <div class="col-sm-6">        
+         <table>
+            <td><button (click)="tournamentClick()" class="btn btn-lg btn-block">Tournaments</button></td>
+            <td> | </td>
+            <td><button (click)="eventClick()" class="btn btn-lg btn-block">Events</button></td>
+            <td> | </td>
+            <td><button (click)="eventDetailClick()" class="btn btn-lg btn-block">Event Details</button></td>           
+         </table>
+     </div>
+   </div>
+</div>
+
+<div class="container-fluid" id="tournaccess" >
+   <div class="row" >      
+     <div class="col-sm-6">        
+      <table>
+         <td><button (click)="tournamentClick()" class="btn btn-lg btn-block">Tournaments</button></td>                    
+      </table>
+     </div>
+   </div>
+</div>
+
+<div class="container-fluid" id="eventaccess" >
+   <div class="row" >      
+     <div class="col-sm-6">        
+      <table>
+         <td><button (click)="eventClick()" class="btn btn-lg btn-block">Events</button></td>                   
+      </table>
+     </div>
+   </div>
+</div>
+
+<div class="container-fluid" id="eventdetailaccess" >
+   <div class="row" >      
+     <div class="col-sm-6">        
+      <table>
+         <td><button (click)="eventDetailClick()" class="btn btn-lg btn-block">Event Details</button></td>                    
+      </table>
+     </div>
+   </div>
+</div>
+
+<div class="container-fluid" id="tourn&eventaccess" >
+   <div class="row" >      
+     <div class="col-sm-6">        
+      <table>
+         <td><button (click)="tournamentClick()" class="btn btn-lg btn-block">Tournaments</button></td>
+         <td> | </td>
+         <td><button (click)="eventClick()" class="btn btn-lg btn-block">Events</button></td>          
+      </table>
+     </div>
+   </div>
+</div>
+
+<div class="container-fluid" id="tourn&eventdetailaccess" >
+   <div class="row" >      
+     <div class="col-sm-6">        
+      <table>
+         <td><button (click)="tournamentClick()" class="btn btn-lg btn-block">Tournaments</button></td>
+         <td> | </td>
+         <td><button (click)="eventDetailClick()" class="btn btn-lg btn-block">Event Details</button></td>           
+      </table>
+     </div>
+   </div>
+</div>
+
+<div class="container-fluid" id="event&eventdetailsaccess">
+   <div class="row" >      
+     <div class="col-sm-6">        
+      <table>
+         <td><button (click)="eventClick()" class="btn btn-lg btn-block">Events</button></td>
+         <td> | </td>
+         <td><button (click)="eventDetailClick()" class="btn btn-lg btn-block">Event Details</button></td>           
+      </table>
+     </div>
+   </div>
+</div>
+
+<div class="container-fluid" id="menufunction">
+   <div class="row" >      
+      <div class="col-sm-6" id="menu_tournament">  
+         <app-tournaments></app-tournaments>    
+      </div>
+      <div class="col-sm-6" id="menu_event">  
+         <app-events></app-events>    
+      </div>
+      <div class="col-sm-6" id="menu_eventdetail">  
+         <app-eventdetails></app-eventdetails>    
+      </div>
+   </div>
+</div>
+
+<router-outlet></router-outlet>

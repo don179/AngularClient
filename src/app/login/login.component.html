@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+        <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+
+            <input type="hidden" name="UserId" #UserId="ngModel" [(ngModel)]="formData.UserId">
+            <input type="hidden" name="RoleDescription" #RoleDescription="ngModel" [(ngModel)]="formData.RoleDescription">
+            <input type="hidden" name="RoleID" #RoleID="ngModel" [(ngModel)]="formData.RoleID">
+        
+            <div class="form-group">
+              <label>USER NAME</label>
+              <input name="UserName" #UserName="ngModel" [(ngModel)]="formData.UserName" class="form-control" required>
+              <div class="validation-error" *ngIf="UserName.invalid && UserName.touched">This field is required.</div>
+            </div>
+        
+            <div class="form-group">
+                <label>PASSWORD</label>
+                <input name="Password"  #Password="ngModel" [(ngModel)]="formData.Password" class="form-control" required>
+                <div class="validation-error" *ngIf="Password.invalid && Password.touched">This field is required.</div>
+            </div>        
+          
+            <div class="form-group">
+              <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">SUBMIT</button>
+            </div>            
+        </form>
+        </div>
+    <div>            
+</div>

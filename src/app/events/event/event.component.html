@@ -1,0 +1,50 @@
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+
+  <input type="hidden" name="EventID" #EventID="ngModel" [(ngModel)]="service.formData.EventID">
+
+  <div class="form-group">
+    <label>EVENT NAME (text field)</label>
+    <input name="EventName" #EventName="ngModel" [(ngModel)]="service.formData.EventName" class="form-control" required>
+    <div class="validation-error" *ngIf="EventName.invalid && EventName.touched">This field is required.</div>
+  </div>
+
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+    <label>EVENT NUMBER (1, 0, 2 ect. Only a number accepted! OR Leave Blank)</label>
+    <input name="EventNumber" #EventNumber="ngModel" [(ngModel)]="service.formData.EventNumber" class="form-control">
+  </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>EVENT DATETIME (format accepted = '2013-04-24 04:00:00' OR Leave Blank)</label>
+      <input name="EventDateTime" #EventDateTime="ngModel" [(ngModel)]="service.formData.EventDateTime" class="form-control">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>EVENT END DATETIME (format accepted = '2013-04-24 04:00:00' OR Leave Blank)</label>
+      <input name="EventEndDateTime" #EventEndDateTime="ngModel" [(ngModel)]="service.formData.EventEndDateTime" class="form-control">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>AUTO CLOSE (1=true, 0= false! Enter 1 or 0 OR Leave Blank)</label>
+      <input name="AutoClose" #AutoClose="ngModel" [(ngModel)]="service.formData.AutoClose" class="form-control">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>TOURNAMENT ID (must be valid Tounament ID! *mandatory field)</label>
+      <input name="FK_TournamentID" #FK_TournamentID="ngModel" [(ngModel)]="service.formData.FK_TournamentID" class="form-control">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">SUBMIT</button>
+  </div>
+</form>

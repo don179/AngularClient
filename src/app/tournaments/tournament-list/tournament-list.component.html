@@ -1,0 +1,16 @@
+<div class="row">
+  <input type="text" placeholder="Filter by Tournament" [(ngModel)]="searchTextf">
+</div>
+<table class="table table-hover">
+  <tr>
+    <th>Tournament Name</th>
+    <th>Action</th>
+    <th>Reload</th>
+  </tr>
+    <tr *ngFor="let tourn of service.list | filter:searchTextf | paginate: { itemsPerPage:3, currentPage: p3 }; let i = index">      
+        <td (click)="populateForm(tourn)">{{tourn.TournamentName}}</td>
+        <td><button (click)="onDelete(tourn.TournamentID)" class="btn btn-sm btn-outline-danger">X</button></td>
+        <td><button (click)="onRefresh(tourn.TournamentID)" class="btn btn-primary">Reload</button></td>
+      </tr>
+</table>
+<pagination-controls (pageChange)="p3 = $event"></pagination-controls>

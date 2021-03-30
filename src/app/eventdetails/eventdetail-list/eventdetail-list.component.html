@@ -1,0 +1,30 @@
+<div class="row">
+  <input type="text" placeholder="Filter by Event Name" [(ngModel)]="searchText">
+</div>
+<table class="table table-hover">
+  <tr>
+    <th>Event Detail Name</th>
+    <th>EventDetailNumber</th>
+    <th>EventDetailOdd</th>
+    <th>FinishingPosition</th>
+    <th>FirstTimer</th>
+    <th>EventDetailStatusName</th>
+    <th>EventName</th>
+    <th>EventNumber</th>
+    <th>Action</th>
+    <th>Reload</th>
+  </tr>
+    <tr *ngFor="let eventdet of service.list | filter:searchText | paginate: { itemsPerPage:3, currentPage: p }; let i = index">
+      <td (click)="populateForm(eventdet)">{{eventdet.EventDetailName}}</td>
+      <td (click)="populateForm(eventdet)">{{eventdet.EventDetailNumber}}</td>
+      <td (click)="populateForm(eventdet)">{{eventdet.EventDetailOdd}}</td>
+      <td (click)="populateForm(eventdet)">{{eventdet.FinishingPosition}}</td>
+      <td (click)="populateForm(eventdet)">{{eventdet.FirstTimer}}</td>
+      <td (click)="populateForm(eventdet)">{{eventdet.EventDetailStatusName}}</td>
+      <td (click)="populateForm(eventdet)">{{eventdet.EventName}}</td>
+      <td (click)="populateForm(eventdet)">{{eventdet.EventNumber}}</td>
+      <td><button (click)="onDelete(eventdet.EventDetailID)" class="btn btn-sm btn-outline-danger">X</button></td>
+      <td><button (click)="onRefresh(eventdet.EventDetailID)" class="btn btn-primary">Reload</button><td>
+  </tr>
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
